@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_exam_4_serious/src/core/const/colors/Appcolors.dart';
+
+class AppTheme {
+  static ThemeData lightTheme = ThemeData(
+    useMaterial3: true,
+
+    colorScheme: ColorScheme.fromSeed(seedColor: Appcolors.primary),
+
+    textTheme: ThemeData.light().textTheme.apply(
+      decoration: TextDecoration.none,
+    ),
+
+    appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
+  );
+
+  static ThemeData darkTheme = ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.dark,
+
+    textTheme: ThemeData.dark().textTheme.apply(
+      decoration: TextDecoration.none,
+    ),
+  );
+}
