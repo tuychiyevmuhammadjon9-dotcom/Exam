@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_exam_4_serious/src/core/const/colors/Appcolors.dart';
 import 'package:flutter_exam_4_serious/src/core/widgets/CustomTextWidget.dart';
 import 'package:flutter_exam_4_serious/src/features/home/models/Home_model.dart';
+import 'package:intl/intl.dart';
 
 class Customdetail extends StatefulWidget {
   const Customdetail({super.key, required this.article});
@@ -45,7 +46,13 @@ class _CustomdetailState extends State<Customdetail> {
                     children: [
                       CircleAvatar(
                         radius: 20,
-                        backgroundColor: Appcolors.secondary,
+                        backgroundColor: const Color.fromARGB(255, 28, 27, 27),
+                        child: Center(
+                          child: Customtextwidget(
+                            text: widget.article.source?.name?[0] ?? '',
+                            fontsize: 10,
+                          ),
+                        ),
                       ),
                       SizedBox(width: 5),
                       Customtextwidget(
@@ -55,7 +62,9 @@ class _CustomdetailState extends State<Customdetail> {
                       ),
                       Spacer(),
                       Customtextwidget(
-                        text: widget.article.publishedAt.toString(),
+                        text: DateFormat(
+                          'yyy-MM-dd',
+                        ).format(widget.article.publishedAt ?? DateTime.now()),
                         fontsize: 15,
                         color: Appcolors.grey,
                       ),

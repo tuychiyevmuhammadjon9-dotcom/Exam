@@ -4,12 +4,9 @@ import 'package:flutter_exam_4_serious/src/features/home/cubit/home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeLoadingState()) {
-    getTeslaNews();
+    getAppleNews();
   }
-
- 
-
-  Future<void> getTeslaNews() async {
+  Future<void> getAppleNews() async {
     try {
       emit(HomeLoadingState());
       final result = await ApiService.getTeslaNews();
@@ -19,11 +16,21 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
+  Future<void> getTeslaNews() async {
+    try {
+      emit(HomeLoadingState());
+      final result = await ApiService.getTeslaNews();
+      emit(HomeLoadedState(model: result, index: 1));
+    } catch (e) {
+      emit(HomeErrorState(errorText: e.toString()));
+    }
+  }
+
   Future<void> getTopbNews() async {
     try {
       emit(HomeLoadingState());
       final result = await ApiService.getToph();
-      emit(HomeLoadedState(model: result, index: 3));
+      emit(HomeLoadedState(model: result, index: 2));
     } catch (e) {
       emit(HomeErrorState(errorText: e.toString()));
     }
@@ -43,7 +50,7 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       emit(HomeLoadingState());
       final result = await ApiService.getToph();
-      emit(HomeLoadedState(model: result, index: 3));
+      emit(HomeLoadedState(model: result, index: 4));
     } catch (e) {
       emit(HomeErrorState(errorText: e.toString()));
     }
@@ -51,10 +58,12 @@ class HomeCubit extends Cubit<HomeState> {
 
   void checkIndex(int index) {
     if (index == 0) {
-      getTeslaNews();
+      getAppleNews();
     } else if (index == 1) {
-      getTopbNews();
+      getTeslaNews();
     } else if (index == 2) {
+      getTopbNews();
+    } else if (index == 3) {
       getTophews();
     } else {
       getWallNews();

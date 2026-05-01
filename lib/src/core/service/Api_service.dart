@@ -3,11 +3,12 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_exam_4_serious/src/features/home/models/Home_model.dart';
+import 'package:intl/intl.dart';
 
 class ApiService {
   static final Dio dio = Dio();
   static final String AppleUrl =
-      'https://newsapi.org/v2/everything?q=apple&from=2026-04-28&to=2026-04-28&sortBy=popularity';
+      'https://newsapi.org/v2/everything?q=apple&from=${DateFormat('yyyy-dd-MM').format(DateTime.now())}to=${DateFormat('yyyy-dd-MM').format(DateTime.now())}&sortBy=popularity';
   static final String TeslaUrl =
       'https://newsapi.org/v2/everything?q=tesla&from=2026-04-28&to=2026-04-28&sortBy=popularity&apiKey=$key';
   static final String TopbUrl =
