@@ -7,7 +7,7 @@ import 'package:flutter_exam_4_serious/src/features/home/cubit/home_cubit.dart';
 import 'package:get_storage/get_storage.dart';
 
 void main() async {
-  await GetStorage.init;
+  await GetStorage.init();
   runApp(
     MultiBlocProvider(
       providers: [BlocProvider(create: (context) => HomeCubit())],

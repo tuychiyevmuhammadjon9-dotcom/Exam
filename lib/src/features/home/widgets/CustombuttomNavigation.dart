@@ -18,7 +18,12 @@ class _CustombuttomnavigationbarState extends State<Custombuttomnavigationbar> {
       backgroundColor: Appcolors.white,
       items: [
         BottomNavigationBarItem(
-          icon: SvgPicture.asset(Appicons.homebuttom),
+          icon: InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            child: SvgPicture.asset(Appicons.homebuttom),
+          ),
           label: '',
         ),
         BottomNavigationBarItem(
@@ -30,7 +35,12 @@ class _CustombuttomnavigationbarState extends State<Custombuttomnavigationbar> {
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: SvgPicture.asset(Appicons.settingsbuttom),
+          icon: InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/settings');
+            },
+            child: SvgPicture.asset(Appicons.settingsbuttom),
+          ),
           label: '',
         ),
       ],

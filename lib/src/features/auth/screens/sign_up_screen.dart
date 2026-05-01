@@ -7,6 +7,7 @@ import 'package:flutter_exam_4_serious/src/features/auth/widgets/CustomRow.dart'
 import 'package:flutter_exam_4_serious/src/features/auth/widgets/CustomRowlogos.dart';
 import 'package:flutter_exam_4_serious/src/features/auth/widgets/CustomTerms.dart';
 import 'package:flutter_exam_4_serious/src/features/auth/widgets/SignContainerWidget.dart';
+import 'package:get_storage/get_storage.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -75,6 +76,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             SizedBox(height: 40),
             GestureDetector(
               onTap: () {
+                GetStorage().write('email', emailcontroller.text);
+                GetStorage().write('password', passwordcontroller.text);
                 Navigator.pushNamed(context, '/home');
               },
               child: SignContainerWidget(haspassword: haspassword),

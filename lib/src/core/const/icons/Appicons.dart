@@ -14,4 +14,12 @@ class Appicons {
   static const String notification = 'assets/icons/notification.svg';
   static const String share = 'assets/icons/share.svg';
   static const String back = 'assets/icons/back.svg';
+
+  //* settings screen icons
+  static const String lock = 'assets/icons/lock.svg';
+  static const String logout = 'assets/icons/logout.svg';
+  static const String profil = 'assets/icons/profil.svg';
+  static const String right = 'assets/icons/right.svg';
+  static const String soroq = 'assets/icons/soroq.svg';
+  static const String notify = 'assets/icons/notify.svg';
 }

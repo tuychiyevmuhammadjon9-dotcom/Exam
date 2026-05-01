@@ -26,7 +26,7 @@ class DetailScreen extends StatelessWidget {
           InkWell(
             onTap: () {
               SharePlus.instance.share(
-                ShareParams(text: 'check out my website https://example.com'),
+                ShareParams(text: 'check out my website ${articles.url}'),
               );
             },
             child: SvgPicture.asset(
@@ -46,9 +46,7 @@ class DetailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Customdetail(
-          article: articles,
-        ),
+        child: Customdetail(article: articles),
       ),
     );
   }
