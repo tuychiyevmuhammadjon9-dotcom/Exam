@@ -12,4 +12,6 @@ class Appicons {
   static const String searchbuttom = 'assets/icons/searchbuttom.svg';
   static const String settingsbuttom = 'assets/icons/settingsbuttom.svg';
   static const String notification = 'assets/icons/notification.svg';
+  static const String share = 'assets/icons/share.svg';
+  static const String back = 'assets/icons/back.svg';
 }

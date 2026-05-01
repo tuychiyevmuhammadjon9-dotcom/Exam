@@ -11,7 +11,12 @@ class AppTheme {
       decoration: TextDecoration.none,
     ),
 
-    appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Appcolors.white,
+      centerTitle: true,
+      elevation: 0,
+      scrolledUnderElevation: 0,
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
