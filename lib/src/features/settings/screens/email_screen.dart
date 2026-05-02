@@ -55,6 +55,9 @@ class _EmailScreenState extends State<EmailScreen> {
             text: GetStorage().read('password'),
             lefticon: Appicons.lock,
             righticon: Appicons.right,
+            ontap: () {
+              Navigator.pushNamed(context, '/password');
+            },
           ),
         ],
       ),
