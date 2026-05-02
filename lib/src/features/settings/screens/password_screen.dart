@@ -36,6 +36,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Appcolors.white,
       body: Column(
         children: [
           SizedBox(height: 20),
@@ -72,10 +73,12 @@ class _PasswordScreenState extends State<PasswordScreen> {
           ),
           SizedBox(height: 20),
           CustomInputWidget(hintText: GetStorage().read('password')),
+          SizedBox(height: 20),
           CustomInputWidget(
             hintText: 'New password',
             controller: passwordcontroller,
           ),
+          SizedBox(height: 20),
           CustomInputWidget(hintText: 'Confirm new password'),
         ],
       ),
